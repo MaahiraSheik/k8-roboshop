@@ -41,6 +41,7 @@ spec:
       containers:
       - name: user
         image: maahirasheik/user:v1
+        imagePullPolicy: Always
         envFrom:
         - configMapRef:
             name: user
