@@ -41,6 +41,9 @@ spec:
       containers:
       - name: mysql
         image: maahirasheik/mysql:v1
+        envFrom:
+        - secretRef:
+            name: mysql
 ---
 apiVersion: v1
 kind: Service
