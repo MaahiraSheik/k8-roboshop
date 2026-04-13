@@ -27,3 +27,22 @@ spec:
       containers:
       - name: mongodb
         image: maahirasheik/mongodb:v1
+---
+appVersion: v1
+kind: Service
+metadata:
+  name: mongodb
+  namespace: roboshop
+  lables:
+    component: mongodb
+    project: roboshop
+    tier: database
+spec:
+  selector:
+    component: mongodb
+    project: roboshop
+    tier: database
+  ports:
+  - protocol: tcp
+    port: 27017 # service port
+    targetport: 27017  # container port          
